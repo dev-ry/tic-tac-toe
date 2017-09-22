@@ -8,5 +8,9 @@
 }
 
 body {
+  width: 0 auto;
+}
+
+.col-md-4 {
 
 }
