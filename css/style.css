@@ -12,6 +12,7 @@ h1 {
 body {
   background-color: #ffae2d;
   linear-gradient: rgba (0, 0, 0, 1), rgba (0, 0, 0, 0);
+  display: flex;
 }
 
 .top {
@@ -23,9 +24,6 @@ body {
   height: 150px;
 }
 
-body {
-  width: 0 auto;
-}
 
 #board {
 }
@@ -48,7 +46,10 @@ body {
   background-size: cover;
 }
 
+
+
 button {
-  display: flex;
-  align-items: center;
+  align-content: center;
 }
+
+

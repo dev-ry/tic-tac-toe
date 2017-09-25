@@ -11,14 +11,18 @@ var boxes = [...document.querySelectorAll(".col-xs-4")];
 var boxCounter = 2;
 var conditionsToWin = [ [0,1,2], [3,4,5], [6,7,8], [0,4,8],
 [2,4,6], [0,3,6], [1,4,8], [2,5,8]];
-
-
+//var gameActive = true;
 
 //for each box
 // forEach, used for arrays
 boxes.forEach(function(box){
   //set up an eventlistener
-  box.addEventListener("click", function(event){
+ box.addEventListener("click", function(event){
+   /* if (box.classList.contains('playerx')) || (box.classList.contains('playero')) {
+      box.removeEventListener("click");
+
+   }
+  } */
     //when user clicks a box place "X.jpg" or "O.jpg" in clicked box
     //alternating between X and O
     for (i = boxCounter; i < 11; i++) {
