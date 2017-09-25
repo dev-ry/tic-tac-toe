@@ -15,7 +15,7 @@
 
 
     <!-- link to custom javascript file (always require after external JS libraries) -->
-    <script src="../tic-tac-toe/js/app.js" type="text/javascript" charset="utf-8" async defer></script>
+
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -34,22 +34,26 @@
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
-          <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">b</div>
-            <div class="col-md-4 box">b</div>
-            <div class="col-md-4 box">b</div>
-            <div class="col-md-4 box">c</div>
-            <div class="col-md-4 box">c</div>
-            <div class="col-md-4 box">c</div>
+          <div class="row1">
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
+          <div class="row2">
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
+          <div class="row3">
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
+            <div class="col-md-4 box"></div>
           </div>
+          <div id="winMessage">
           <button type="click">reset</button>
 
 
         </div>
       </div>
     </div>
+    <script src="js/app.js"></script>
   </body>
 </html>
