@@ -7,24 +7,25 @@ console.log("checking links");
 //});
 
 
-var boxes = [...document.querySelectorAll(".col-md-4")];
+var boxes = [...document.querySelectorAll(".col-xs-4")];
 var boxCounter = 2;
-var player;
-var conditionsToWin = [ [0,1,2], [3,4,5], [6,7,8], [0,4,8], [2,4,6], [0,3,6], [1,4,8], [2,5,8]]
+var conditionsToWin = [ [0,1,2], [3,4,5], [6,7,8], [0,4,8],
+[2,4,6], [0,3,6], [1,4,8], [2,5,8]];
+
+
 
 //for each box
 // forEach, used for arrays
 boxes.forEach(function(box){
   //set up an eventlistener
   box.addEventListener("click", function(event){
-    console.log(boxes.length);
-    //when user clicks a box place "X.jpg" or "O image.jpg" in clicked box
+    //when user clicks a box place "X.jpg" or "O.jpg" in clicked box
     //alternating between X and O
     for (i = boxCounter; i < 11; i++) {
       if (boxCounter % 2 === 0) {
-        box.style['background-image'] = `url("X.jpg")`;
+        box.className += ` playerx`;
       } else {
-        box.style['background-image'] = `url("O image.jpg")`;
+        box.className += ` playero`;
       }
     }
 
@@ -34,48 +35,112 @@ boxes.forEach(function(box){
       }
     }
     */
-    if (boxes[0].style['background-image'] === `url("X.jpg")` &&
-      boxes[1].style['background-image'] === `url("X.jpg")` &&
-      boxes[2].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML = "Player X wins!"
-    else if (boxes[3].style['background-image'] === `url("X.jpg")` &&
-      boxes[4].style['background-image'] === `url("X.jpg")` &&
-      boxes[5].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[6].style['background-image'] === `url("X.jpg")` &&
-      boxes[7].style['background-image'] === `url("X.jpg")` &&
-      boxes[8].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[0].style['background-image'] === `url("X.jpg")` &&
-      boxes[4].style['background-image'] === `url("X.jpg")` &&
-      boxes[8].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[2].style['background-image'] === `url("X.jpg")` &&
-      boxes[4].style['background-image'] === `url("X.jpg")` &&
-      boxes[6].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[0].style['background-image'] === `url("X.jpg")` &&
-      boxes[3].style['background-image'] === `url("X.jpg")` &&
-      boxes[6].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[1].style['background-image'] === `url("X.jpg")` &&
-      boxes[4].style['background-image'] === `url("X.jpg")` &&
-      boxes[8].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else if (boxes[2].style['background-image'] === `url("X.jpg")` &&
-      boxes[5].style['background-image'] === `url("X.jpg")` &&
-      boxes[8].style['background-image'] === `url("X.jpg")`)
-      winMessage.innerHTML("Player X wins!");
-    else
-      winMessage.innerHTML("Player O wins!");
-  boxCounter++;
+    var winAlert = document.getElementById('winMessage');
 
+    if (boxes[0].classList.contains('playerx') &&
+      boxes[1].classList.contains('playerx') &&
+      boxes[2].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[3].classList.contains('playerx') &&
+      boxes[4].classList.contains('playerx') &&
+      boxes[5].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[6].classList.contains('playerx') &&
+      boxes[7].classList.contains('playerx') &&
+      boxes[8].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[0].classList.contains('playerx') &&
+      boxes[4].classList.contains('playerx') &&
+      boxes[8].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[2].classList.contains('playerx') &&
+      boxes[4].classList.contains('playerx') &&
+      boxes[6].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[0].classList.contains('playerx') &&
+      boxes[3].classList.contains('playerx') &&
+      boxes[6].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[1].classList.contains('playerx') &&
+      boxes[4].classList.contains('playerx') &&
+      boxes[7].classList.contains('playerx')) {
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[2].classList.contains('playerx') &&
+      boxes[5].classList.contains('playerx') &&
+      boxes[8].classList.contains('playerx')){
+        winAlert.innerHTML = "Player X wins!";
+    }
+    else if (boxes[0].classList.contains('playero') &&
+      boxes[1].classList.contains('playero') &&
+      boxes[2].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[3].classList.contains('playero') &&
+      boxes[4].classList.contains('playero') &&
+      boxes[5].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[6].classList.contains('playero') &&
+      boxes[7].classList.contains('playero') &&
+      boxes[8].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[0].classList.contains('playero') &&
+      boxes[4].classList.contains('playero') &&
+      boxes[8].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[2].classList.contains('playero') &&
+      boxes[4].classList.contains('playero') &&
+      boxes[6].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[0].classList.contains('playero') &&
+      boxes[3].classList.contains('playero') &&
+      boxes[6].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[1].classList.contains('playero') &&
+      boxes[4].classList.contains('playero') &&
+      boxes[7].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else if (boxes[2].classList.contains('playero') &&
+      boxes[5].classList.contains('playero') &&
+      boxes[8].classList.contains('playero')){
+        winAlert.innerHTML = "Player O wins!";
+    }
+    else {
+      //winAlert.innerHTML = "It's a Draw!";
 
+      boxCounter++;
+    }
 
     //after each click, check for win
     //if "win" alert "You win!", else, continue playing till win
 
   });
+});
+
+// event listenter on button : when reset button is clicked called the resetBoard() function
+var btn = document.querySelector('button');
+
+btn.addEventListener('click', function(event){
+
+  function resetBoard(){
+    // // remove all classnames "playerx" and "playero"
+    // var classRemover = document.getElementsByClass('playerx', 'playero');
+    // classRemover.classList.remove('playerx', 'playero');
+    location.reload();
+    }
+    resetBoard();
 });
 
 

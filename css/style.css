@@ -2,6 +2,22 @@
   margin-top: 10px;
 }
 
+h1 {
+  font-family: 'Indie Flower', cursive;
+  background: #42f4f4;
+  padding: 20px;
+  linear-gradient: rgba (0, 0, 0, 1), rgba (0, 0, 0, 0);
+}
+
+body {
+  background-color: #ffae2d;
+  linear-gradient: rgba (0, 0, 0, 1), rgba (0, 0, 0, 0);
+}
+
+.top {
+  background-color: #42f4f4;
+}
+
 .box {
   border: 1px solid black;
   height: 150px;
@@ -11,7 +27,28 @@ body {
   width: 0 auto;
 }
 
-.col-md-4 {
-    background-size: cover;
+#board {
+}
 
+.col-xs-4 {
+  background-size: cover;
+}
+
+#winMessage {
+
+}
+
+.playerx{
+  background-image: url("../X.jpg");
+  background-size: cover;
+}
+
+.playero{
+  background-image: url("../O.jpg");
+  background-size: cover;
+}
+
+button {
+  display: flex;
+  align-items: center;
 }
